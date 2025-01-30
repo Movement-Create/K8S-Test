@@ -17,10 +17,12 @@ spec:
         app.kuberenetes.io/name: grafana
     spec:
       containers:
-        - name: grafana
-          image: grafana/grafana:latest
-          ports:
+        - ports:
             - containerPort: 3000
           env:
             - name: GF_SECURITY_ADMIN_PASSWORD
-              value: "admin"  # Default admin password (you can change this)
+              value: admin
+          volumeMounts: []
+          command: []
+          name: grafana
+          image: grafana/grafana:latest
